@@ -24,8 +24,8 @@ Example: Apple Inc. (``AAPL``)
 
 .. code:: python
 
-    >>> import InVaIN import Share
-    >>> api = InVain('AAPL')
+    >>> from InVaIN import InVaIN
+    >>> api = InVaIN('AAPL')
     >>> print api.get_price_string()
     '173.07'
 
@@ -33,6 +33,7 @@ Example: Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT
 
 .. code:: python 
 
+    >>> from InVaIN import InVaIN
     >>> api = InVaIN()
     >>> api.add_tickers(['AAPL','GOOG', 'MSFT']);
     >>> prices = api.get_prices();
