@@ -17,7 +17,7 @@ $ pip install InVaIN
 from InVaIN import InVaIN   
 api = InVaIN('AAPL')        
 print api.get_price_string()
------------------
+###################
 '173.07'
 ```
 
@@ -30,7 +30,7 @@ api.add_tickers(['AAPL','GOOG', 'MSFT']);
 prices = api.get_prices();
 for stock in prices:
    print (stock, prices[stock]);
------------------
+###################
 'AAPL 173.07'
 'GOOG 1047.41'
 'MSFT 84.88'
