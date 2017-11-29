@@ -27,7 +27,7 @@ Example: Apple Inc. (``AAPL``)
     from InVaIN import InVaIN
     api = InVaIN('AAPL')
     print api.get_price_string()
-     '173.07'
+    * '173.07' *
 
 Example: Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``), 
 
@@ -39,9 +39,9 @@ Example: Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT
     prices = api.get_prices();
     for stock in prices:
        print (stock, prices[stock]);
-     'AAPL 173.07'
-     'GOOG 1047.41'
-     'MSFT 84.88'
+    * 'AAPL 173.07' *
+    * 'GOOG 1047.41' *
+    * 'MSFT 84.88' *
 Available methods
 
 - ``get_prices()``
