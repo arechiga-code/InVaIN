@@ -7,13 +7,12 @@ here = path.abspath(path.dirname(__file__))
 
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
-#long_description = open('README.rst').read()
 
 packages=find_packages(exclude=['contrib', 'docs', 'tests*'])
 
 setup(
   name = 'InVaIN',
-  version = '0.1.1',
+  version = '0.1.2',
   description = 'Python module to get stock data',
   long_description = long_description,
   author = 'Alan Arechiga',
