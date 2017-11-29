@@ -48,7 +48,7 @@ Available methods
 - ``add_tickers()``
 - ``remove_ticker()``
 - ``get_tickers()``
-
+- ``More to Come``
 Requirements
 ------------
 requests
