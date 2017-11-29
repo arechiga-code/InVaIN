@@ -2,7 +2,7 @@ import requests
 import json
 __version___ = ".01";
 
-BASE_URL = 'http://inva.in/quotes'
+BASE_URL = 'https://inva.in/quotes'
 
 class InVaIN():
         
