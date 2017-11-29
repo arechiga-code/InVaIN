@@ -2,25 +2,26 @@
 
 Python module to get stock data from YAHOO! Finance
 
-### Install
+## Install
 
 From PyPI with pip:
 
 ```bash
 $ pip install InVaIN
 ```
-Code Examples
---------------
+## Code Examples
 
-Example: Apple Inc. (``AAPL``)
+### Example: Apple Inc. (``AAPL``)
 
 ``` python   
 from InVaIN import InVaIN   
 api = InVaIN('AAPL')        
 print api.get_price_string()
-*'173.07'*
+-----------------
+'173.07'
 ```
-Example: Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``), 
+
+### Example: Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``), 
 
 ```python
 from InVaIN import InVaIN
@@ -29,10 +30,12 @@ api.add_tickers(['AAPL','GOOG', 'MSFT']);
 prices = api.get_prices();
 for stock in prices:
    print (stock, prices[stock]);
-*'AAPL 173.07'
-*'GOOG 1047.41'*
-*'MSFT 84.88'*
+-----------------
+'AAPL 173.07'
+'GOOG 1047.41'
+'MSFT 84.88'
 ```
+
 
 Available methods
 
