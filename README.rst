@@ -20,15 +20,16 @@ Usage examples
 Get shares data
 ^^^^^^^^^^^^^^^
 
-Example: Yahoo! Inc. (``YHOO``)
+Example: Apple Inc. (``AAPL``)
 
 .. code:: python
 
     >>> import InVaIN import Share
-    >>> tickers = ['AAPL','GOOG','MSFT']
-    >>> api = InVain(tickers)
+    >>> api = InVain('AAPL')
     >>> print api.get_price_string()
-    '173.07, 1047.41, 84.88'
+    '173.07'
+
+Example: Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``), 
 
 .. code:: python 
 
