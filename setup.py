@@ -30,7 +30,7 @@ setup(
     'Intended Audience :: Developers',
     'Intended Audience :: Financial and Insurance Industry',
     'Topic :: Software Development :: Libraries :: Python Modules',
-    'Topic :: Office/Business :: Financial'
+    'Topic :: Office/Business :: Financial',
 
     # Pick your license as you wish (should match "license" above)
     'License :: OSI Approved :: MIT License',
