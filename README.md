@@ -37,7 +37,7 @@ for stock in prices:
 ```
 
 
-Available methods
+## Available methods
 
 - ``get_prices()``
 - ``get_price_string()``
