@@ -31,7 +31,7 @@ print(api.get_price())
 '173.07'
 ```
 
-### Example: Advanced API Method 1 -- Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``), 
+### Example: Advanced API Method 1 -- Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``) 
 
 ```python
 import InVaIN
@@ -51,7 +51,7 @@ for stock in prices:
 'MSFT 84.88'
 ```
 
-### Example: Advanced API Method 2 -- Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``), 
+### Example: Advanced API Method 2 -- Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``) 
 
 ```python
 import InVaIN
