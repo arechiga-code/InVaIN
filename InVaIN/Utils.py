@@ -5,7 +5,7 @@ def is_sequence(arg):
     return not hasattr(arg, "strip") and (hasattr(arg, "__getitem__") or hasattr(arg, "__iter__"))
 
 def fetch(tickers, fields):
-        BASE_URL = 'https://testing.macler.us/invain-test/fix.php'
+        BASE_URL = 'http://inva.in/quotes'
         
         #Stringify if list
         if is_sequence(tickers):
