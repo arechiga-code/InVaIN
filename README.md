@@ -1,7 +1,6 @@
 # InVaIN
 
-Python module to get stock data from YAHOO! Finance <br/>
-**CHANGES NOT PUSHED TO PyPI. THESE METHODS WILL NOT WORK CURRENTLY**
+Python module to get stock data from YAHOO! Finance
 
 ## Install
 
