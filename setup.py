@@ -12,7 +12,7 @@ packages=find_packages(exclude=['contrib', 'docs', 'tests*'])
 
 setup(
   name = 'InVaIN',
-  version = '0.2.3',
+  version = '0.2.4.1',
   description = 'Python module to get stock data',
   long_description = long_description,
   author = 'Alan Arechiga',
