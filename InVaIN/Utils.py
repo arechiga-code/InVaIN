@@ -5,7 +5,7 @@ def is_sequence(arg):
     return not hasattr(arg, "strip") and (hasattr(arg, "__getitem__") or hasattr(arg, "__iter__"))
 
 def fetch(tickers, fields):
-        BASE_URL = 'http://inva.in/quotes'
+        BASE_URL = 'http://aws.inva.in/quotes'
         
         #Stringify if list
         if is_sequence(tickers):
