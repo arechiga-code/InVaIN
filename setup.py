@@ -5,20 +5,25 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
+about = {}
+with open(path.join(here, 'invain', '__version__.py'),
+          'r', 'utf-8') as f:
+    exec(f.read(), about)
+
 with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 packages=find_packages(exclude=['contrib', 'docs', 'tests*'])
 
 setup(
-  name = 'InVaIN',
-  version = '0.2.4.1',
-  description = 'Python module to get stock data',
+  name=about['__title__'],
+  version=about['__version__'],
+  description=about['__description__'],
   long_description = long_description,
   author = 'Alan Arechiga',
   author_email = 'alan@macler.us',
-  license = 'MIT',
-  url = 'https://github.com/hailfire113/InVaIN',
+  license=about['__license__'],
+  url=about['__github_url__'],
   download_url = 'https://github.com/hailfire113/InVaIN/archive/0.1.tar.gz',
   keywords = ['invain', 'stocks', 'data','finance', 'yahoo','quotes'],
   classifiers=[

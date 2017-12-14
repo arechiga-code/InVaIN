@@ -2,28 +2,30 @@
 
 Python module to get stock data from YAHOO! Finance
 
+## Brief Overview
+InVaIN works either through the **Simple API** or the **Advanced API**. <br />
+**Simple API** is only for one ticker. Once created it will get any stock data for that ticker. It returns just the value so no need for parsing data. Simple API allow for ticker to be changed. <br />
+**Advanced API** hold a list of tickers that can be added to and modified. Advanced API can use Simple object methods, but also have the ability to add several data fields to gather large data sets quickly. Returns values in a dict object so parsing data is neccesary. 
+
 ## Install
 
 From PyPI with pip:
 
 ```bash
-$ pip install InVaIN
+$ pip install invain
 ```
 
-## Brief Overview
-InVaIN works either through the **Simple API** or the **Advanced API**. <br />
-**Simple API** is only for one ticker. Once created it will get any stock data for that ticker. It returns just the value so no need for parsing data. Simple API allow for ticker to be changed. <br />
-**Advanced API** hold a list of tickers that can be added to and modified. Advanced API can use Simple object methods, but also have the ability to add several data fields to gather large data sets quickly. Returns values in a dict object so parsing data is neccesary.  
+ 
 
 ## Code Examples
 
 ### Example: Simple API -- Apple Inc. (``AAPL``)
 
 ``` python   
-import InVaIN
+import invain
 
 #Create Simple API object
-api = InVaIN.Simple('HD') 
+api = invain.Simple('HD') 
 #Get market price
 print(api.get_price())
 ###################
@@ -33,10 +35,10 @@ print(api.get_price())
 ### Example: Advanced API Method 1 -- Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``) 
 
 ```python
-import InVaIN
+import invain
 
 #Create Advanced API object with all the tickers provided
-api = InVaIN.Advanced('AAPL','GOOG', 'MSFT')
+api = invain.Advanced('AAPL','GOOG', 'MSFT')
 
 #Use Simple API method to get price
 prices = api.get_price()
@@ -53,10 +55,10 @@ for stock in prices:
 ### Example: Advanced API Method 2 -- Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``) 
 
 ```python
-import InVaIN
+import invain
 
 #Create Advanced API object with all the tickers provided
-api = InVaIN.Advanced('AAPL','GOOG', 'MSFT')
+api = invain.Advanced('AAPL','GOOG', 'MSFT')
 
 #Add price field to data 
 api.add_price()
