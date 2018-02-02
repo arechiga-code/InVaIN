@@ -20,10 +20,13 @@ class Simple():
         except ValueError as err:
             print(err.args,"\nQuitting")
             sys.exit(1)
-    
+
+    def get_ticker(self):
+        return self.ticker;
+        
     def get_price(self): 
          #Pull Data 
-         data = fetch(self.ticker,'rmp') 
+         data = quote(self.ticker,'rmp') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -34,7 +37,7 @@ class Simple():
 
     def get_volume(self): 
          #Pull Data 
-         data = fetch(self.ticker,'rmv') 
+         data = quote(self.ticker,'rmv') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -45,7 +48,7 @@ class Simple():
 
     def get_ask(self): 
          #Pull Data 
-         data = fetch(self.ticker,'a') 
+         data = quote(self.ticker,'a') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -56,7 +59,7 @@ class Simple():
 
     def get_askSize(self): 
          #Pull Data 
-         data = fetch(self.ticker,'aZ') 
+         data = quote(self.ticker,'aZ') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -67,7 +70,7 @@ class Simple():
 
     def get_averageDailyVolume3Month(self): 
          #Pull Data 
-         data = fetch(self.ticker,'aDy3M') 
+         data = quote(self.ticker,'aDy3M') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -78,7 +81,7 @@ class Simple():
 
     def get_averageDailyVolume10Day(self): 
          #Pull Data 
-         data = fetch(self.ticker,'aDy10d') 
+         data = quote(self.ticker,'aDy10d') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -89,7 +92,7 @@ class Simple():
 
     def get_bid(self): 
          #Pull Data 
-         data = fetch(self.ticker,'b') 
+         data = quote(self.ticker,'b') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -100,7 +103,7 @@ class Simple():
 
     def get_bidSize(self): 
          #Pull Data 
-         data = fetch(self.ticker,'bZ') 
+         data = quote(self.ticker,'bZ') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -111,7 +114,7 @@ class Simple():
 
     def get_bookValue(self): 
          #Pull Data 
-         data = fetch(self.ticker,'bV') 
+         data = quote(self.ticker,'bV') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -122,7 +125,7 @@ class Simple():
 
     def get_currency(self): 
          #Pull Data 
-         data = fetch(self.ticker,'c') 
+         data = quote(self.ticker,'c') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -133,7 +136,7 @@ class Simple():
 
     def get_earningsTimestamp(self): 
          #Pull Data 
-         data = fetch(self.ticker,'eT') 
+         data = quote(self.ticker,'eT') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -144,7 +147,7 @@ class Simple():
 
     def get_earningsTimestampEnd(self): 
          #Pull Data 
-         data = fetch(self.ticker,'eTE') 
+         data = quote(self.ticker,'eTE') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -155,7 +158,7 @@ class Simple():
 
     def get_earningsTimestampStart(self): 
          #Pull Data 
-         data = fetch(self.ticker,'eTS') 
+         data = quote(self.ticker,'eTS') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -166,7 +169,7 @@ class Simple():
 
     def get_epsForward(self): 
          #Pull Data 
-         data = fetch(self.ticker,'epsF') 
+         data = quote(self.ticker,'epsF') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -177,7 +180,7 @@ class Simple():
 
     def get_epsTrailingTwelveMonths(self): 
          #Pull Data 
-         data = fetch(self.ticker,'epsT') 
+         data = quote(self.ticker,'epsT') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -188,7 +191,7 @@ class Simple():
 
     def get_fiftyDayAverage(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fifDyAvg') 
+         data = quote(self.ticker,'fifDyAvg') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -199,7 +202,7 @@ class Simple():
 
     def get_fiftyDayAverageChange(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fifDyAvgCh') 
+         data = quote(self.ticker,'fifDyAvgCh') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -210,7 +213,7 @@ class Simple():
 
     def get_fiftyDayAverageChangePercent(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fifDyAvgChP') 
+         data = quote(self.ticker,'fifDyAvgChP') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -221,7 +224,7 @@ class Simple():
 
     def get_fiftyTwoWeekHigh(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fif2Wh') 
+         data = quote(self.ticker,'fif2Wh') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -232,7 +235,7 @@ class Simple():
 
     def get_fiftyTwoWeekHighChange(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fif2WhCh') 
+         data = quote(self.ticker,'fif2WhCh') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -243,7 +246,7 @@ class Simple():
 
     def get_fiftyTwoWeekHighChangePercent(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fif2WhChP') 
+         data = quote(self.ticker,'fif2WhChP') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -254,7 +257,7 @@ class Simple():
 
     def get_fiftyTwoWeekLow(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fif2Wl') 
+         data = quote(self.ticker,'fif2Wl') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -265,7 +268,7 @@ class Simple():
 
     def get_fiftyTwoWeekLowChange(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fif2WlCh') 
+         data = quote(self.ticker,'fif2WlCh') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -276,7 +279,7 @@ class Simple():
 
     def get_fiftyTwoWeekLowChangePercent(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fif2WlChP') 
+         data = quote(self.ticker,'fif2WlChP') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -287,7 +290,7 @@ class Simple():
 
     def get_financialCurrency(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fC') 
+         data = quote(self.ticker,'fC') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -298,7 +301,7 @@ class Simple():
 
     def get_forwardPE(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fPE') 
+         data = quote(self.ticker,'fPE') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -309,7 +312,7 @@ class Simple():
 
     def get_fullExchangeName(self): 
          #Pull Data 
-         data = fetch(self.ticker,'fEXN') 
+         data = quote(self.ticker,'fEXN') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -320,7 +323,7 @@ class Simple():
 
     def get_gmtOffSetMilliseconds(self): 
          #Pull Data 
-         data = fetch(self.ticker,'gmtOff') 
+         data = quote(self.ticker,'gmtOff') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -331,7 +334,7 @@ class Simple():
 
     def get_longName(self): 
          #Pull Data 
-         data = fetch(self.ticker,'lN') 
+         data = quote(self.ticker,'lN') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -342,7 +345,7 @@ class Simple():
 
     def get_marketCap(self): 
          #Pull Data 
-         data = fetch(self.ticker,'mC') 
+         data = quote(self.ticker,'mC') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -353,7 +356,7 @@ class Simple():
 
     def get_marketChange(self): 
          #Pull Data 
-         data = fetch(self.ticker,'regMCh') 
+         data = quote(self.ticker,'regMCh') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -364,7 +367,7 @@ class Simple():
 
     def get_marketChangePercent(self): 
          #Pull Data 
-         data = fetch(self.ticker,'regMChP') 
+         data = quote(self.ticker,'regMChP') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -375,7 +378,7 @@ class Simple():
 
     def get_marketDayHigh(self): 
          #Pull Data 
-         data = fetch(self.ticker,'regMDyH') 
+         data = quote(self.ticker,'regMDyH') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -386,7 +389,7 @@ class Simple():
 
     def get_marketDayLow(self): 
          #Pull Data 
-         data = fetch(self.ticker,'regMDyL') 
+         data = quote(self.ticker,'regMDyL') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -397,7 +400,7 @@ class Simple():
 
     def get_marketOpen(self): 
          #Pull Data 
-         data = fetch(self.ticker,'regMO') 
+         data = quote(self.ticker,'regMO') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -408,7 +411,7 @@ class Simple():
 
     def get_marketPreviousClose(self): 
          #Pull Data 
-         data = fetch(self.ticker,'regMPvC') 
+         data = quote(self.ticker,'regMPvC') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -419,7 +422,7 @@ class Simple():
 
     def get_marketTime(self): 
          #Pull Data 
-         data = fetch(self.ticker,'rmt') 
+         data = quote(self.ticker,'rmt') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -430,7 +433,7 @@ class Simple():
 
     def get_postMarketChange(self): 
          #Pull Data 
-         data = fetch(self.ticker,'pmCh') 
+         data = quote(self.ticker,'pmCh') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -441,7 +444,7 @@ class Simple():
 
     def get_postMarketChangePercent(self): 
          #Pull Data 
-         data = fetch(self.ticker,'pmChP') 
+         data = quote(self.ticker,'pmChP') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -452,7 +455,7 @@ class Simple():
 
     def get_postMarketPrice(self): 
          #Pull Data 
-         data = fetch(self.ticker,'pmP') 
+         data = quote(self.ticker,'pmP') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -463,7 +466,7 @@ class Simple():
 
     def get_postMarketTime(self): 
          #Pull Data 
-         data = fetch(self.ticker,'pmT') 
+         data = quote(self.ticker,'pmT') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -474,7 +477,7 @@ class Simple():
 
     def get_priceHint(self): 
          #Pull Data 
-         data = fetch(self.ticker,'pH') 
+         data = quote(self.ticker,'pH') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -485,7 +488,7 @@ class Simple():
 
     def get_priceToBook(self): 
          #Pull Data 
-         data = fetch(self.ticker,'p2B') 
+         data = quote(self.ticker,'p2B') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -496,7 +499,7 @@ class Simple():
 
     def get_sharesOutstanding(self): 
          #Pull Data 
-         data = fetch(self.ticker,'sho') 
+         data = quote(self.ticker,'sho') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -507,7 +510,7 @@ class Simple():
 
     def get_shortName(self): 
          #Pull Data 
-         data = fetch(self.ticker,'shN') 
+         data = quote(self.ticker,'shN') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -517,11 +520,19 @@ class Simple():
          return data
 
     def get_symbol(self): 
-         return self.ticker
+         #Pull Data 
+         data = quote(self.ticker,'sym') 
+
+         #Isolate Stock Data
+         if len(data) > 1:
+             for ticker in data:
+                 data[ticker] = data[ticker]['symbol']
+         else: data = list(data.values())[0]['symbol']
+         return data
 
     def get_tradeable(self): 
          #Pull Data 
-         data = fetch(self.ticker,'tdbl') 
+         data = quote(self.ticker,'tdbl') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -532,7 +543,7 @@ class Simple():
 
     def get_trailingPE(self): 
          #Pull Data 
-         data = fetch(self.ticker,'tPE') 
+         data = quote(self.ticker,'tPE') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -543,7 +554,7 @@ class Simple():
 
     def get_twoHundredDayAverage(self): 
          #Pull Data 
-         data = fetch(self.ticker,'tHdDyAv') 
+         data = quote(self.ticker,'tHdDyAv') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -554,7 +565,7 @@ class Simple():
 
     def get_twoHundredDayAverageChange(self): 
          #Pull Data 
-         data = fetch(self.ticker,'tHdDyAvCh') 
+         data = quote(self.ticker,'tHdDyAvCh') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -565,7 +576,7 @@ class Simple():
 
     def get_twoHundredDayAverageChangePercent(self): 
          #Pull Data 
-         data = fetch(self.ticker,'tHdDyAvChP') 
+         data = quote(self.ticker,'tHdDyAvChP') 
 
          #Isolate Stock Data
          if len(data) > 1:
@@ -573,8 +584,6 @@ class Simple():
                  data[ticker] = data[ticker]['twoHundredDayAverageChangePercent']
          else: data = list(data.values())[0]['twoHundredDayAverageChangePercent']
          return data
-
-
 
 
 

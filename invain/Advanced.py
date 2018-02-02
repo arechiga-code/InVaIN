@@ -5,10 +5,11 @@ from .Utils import *
 
 class Advanced(Simple):
     def __init__(self, ticker, *extras):
-        if is_sequence(ticker):
-            self.ticker= ticker
-        else: self.ticker = [ticker]
+        #Check if ticker var is a list or string then set self.ticker to a list of ticker(s)
+        self.ticker = ticker if is_sequence(ticker) else [ticker]
+
         self.add_tickers(extras)
+
         self.field = []
         del Advanced.change_ticker
         
@@ -18,10 +19,7 @@ class Advanced(Simple):
         
     #Add Tickers to End of List, Extend Allows for ticker to be a List                
     def add_ticker(self, ticker):
-        if is_sequence(ticker):
-            self.ticker.extend(ticker)
-        else: self.ticker.extend([ticker])
-        
+        self.ticker.extend(ticker) if is_sequence(ticker) else self.ticker.extend([ticker])  
                 
     #If Someone is Sketch About Singular Form
     def add_tickers(self, tickers, *extras):
@@ -34,6 +32,9 @@ class Advanced(Simple):
             else: raise ValueError('InVaIN.Advanced() Failed to remove ticker. Ticker not found in list')
         except ValueError as err:
             print(err.args,"\n Non-Fatal Error")
+
+    def get_ticker(self):
+        return self.ticker;
             
 #              Add Fields to Custom Field List
 #################################################################
@@ -349,7 +350,7 @@ class Advanced(Simple):
     def get_customData(self):
         try:
             if self.field :
-                data = fetch(self.ticker,self.field)
+                data = quote(self.ticker,self.field)
             else: raise ValueError('InVaIN.Advanced() Missing fields for customData.')
         
         except ValueError as err:
