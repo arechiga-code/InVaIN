@@ -47,15 +47,10 @@ def hist(tickers, period, interval):
 
         if is_sequence(tickers):
             tickers = ','.join(tickers)
-        
-        if is_sequence(period):
-            period1 = time.mktime(period[0].timetuple())
-            period2 = time.mktime(period[1].timetuple()) if len(period) > 1 else time.mktime(datetime.datetime.now().timetuple())
-        else:
-            period1 = time.mktime(period.timetuple())
-            period2 = time.mktime(datetime.datetime.now().timetuple())
+        period1 = period[0]
+        period2 = period[1]
             
-        times = str(int(period1))+','+str((int(period2)))
+        times = str(period1)+','+str(period2)
         #Prepare the Parameters - Period 1 is oldest date - Period 2 is newest date
         temp = {'t': tickers, 'times': times , 'inter' : interval}
 

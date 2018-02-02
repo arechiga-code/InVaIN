@@ -6,9 +6,9 @@ from .Utils import *
 class Advanced(Simple):
     def __init__(self, ticker, *extras):
         #Check if ticker var is a list or string then set self.ticker to a list of ticker(s)
-        self.ticker = ticker if is_sequence(ticker) else [ticker]
+        self.ticker = [symbol.upper() for symbol in ticker] if is_sequence(ticker) else [ticker.upper()]
 
-        self.add_tickers(extras)
+        self.add_tickers([symbol.upper() for symbol in extras])
 
         self.field = []
         del Advanced.change_ticker
@@ -19,7 +19,7 @@ class Advanced(Simple):
         
     #Add Tickers to End of List, Extend Allows for ticker to be a List                
     def add_ticker(self, ticker):
-        self.ticker.extend(ticker) if is_sequence(ticker) else self.ticker.extend([ticker])  
+        self.ticker.extend([symbol.upper() for symbol in ticker]) if is_sequence(ticker) else self.ticker.extend([ticker.upper()])  
                 
     #If Someone is Sketch About Singular Form
     def add_tickers(self, tickers, *extras):
@@ -28,7 +28,7 @@ class Advanced(Simple):
 
     def remove_ticker(self, ticker):
         try:
-            if ticker in self.ticker: self.ticker.remove(ticker)
+            if ticker in self.ticker: self.ticker.remove(ticker.upper())
             else: raise ValueError('InVaIN.Advanced() Failed to remove ticker. Ticker not found in list')
         except ValueError as err:
             print(err.args,"\n Non-Fatal Error")

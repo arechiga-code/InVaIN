@@ -7,7 +7,7 @@ class Simple():
         try:
             if is_sequence(symbol) or not isinstance(symbol, str):
                 raise ValueError('InVaIN.Simple() expects a string as the only parameter')
-            else: self.ticker = symbol
+            else: self.ticker = symbol.upper()
         except ValueError as err:
             print(err.args,"\nQuitting")
             sys.exit(1) 
@@ -16,7 +16,7 @@ class Simple():
         try:
             if is_sequence(symbol) or not isinstance(symbol, str):
                 raise ValueError('InVaIN.Simple() expects a string as the only parameter')
-            else: self.ticker = symbol
+            else: self.ticker = symbol.upper()
         except ValueError as err:
             print(err.args,"\nQuitting")
             sys.exit(1)
