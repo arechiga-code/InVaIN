@@ -12,7 +12,7 @@ class History():
         now = int(time.mktime(datetime.datetime.now().timetuple()))
         
         #Check if ticker var is a list or string then set self.ticker to a list of ticker(s)
-        self.ticker = [symbol.upper() for symbol in ticker] if is_sequence(ticker) else [ticker]
+        self.ticker = [symbol.upper() for symbol in ticker] if is_sequence(ticker) else [ticker.upper()]
 
         #Check if start exists - if not default start time is 30 days from now, if start exists set start to strat.
         period1 = now - 30*24*60*60 if start is None else int(time.mktime(start.timetuple()))
@@ -60,3 +60,75 @@ class History():
             return
         
         self.interval = n +'d' if compare == 'daily' else n + 'wk' if compare == 'weekly' else n + 'mo' if compare == 'monthly' else print("Error Changing Frequency: Not a Valid Frequency")
+
+    def get_date(self, ticker=None):
+        #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
+        return {key : self.hist_data[key]['Date'] for key in self.hist_data} if ticker is None else {key : self.hist_data[key]['Date'] for key in ticker} if is_sequence(ticker) else {ticker : self.hist_data[ticker]['Date']}
+
+    def get_open(self, ticker=None):
+        #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
+        return {key : self.hist_data[key]['Open'] for key in self.hist_data} if ticker is None else {key : self.hist_data[key]['Open'] for key in ticker} if is_sequence(ticker) else {ticker : self.hist_data[ticker]['Open']}
+
+    def get_highs(self, ticker=None):
+        #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
+        return {key : self.hist_data[key]['High'] for key in self.hist_data} if ticker is None else {key : self.hist_data[key]['High'] for key in ticker} if is_sequence(ticker) else {ticker : self.hist_data[ticker]['High']}
+
+    def get_low(self, ticker=None):
+        #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
+        return {key : self.hist_data[key]['Low'] for key in self.hist_data} if ticker is None else {key : self.hist_data[key]['Low'] for key in ticker} if is_sequence(ticker) else {ticker : self.hist_data[ticker]['Low']}
+
+    def get_close(self, ticker=None):
+        #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
+        return {key : self.hist_data[key]['Close'] for key in self.hist_data} if ticker is None else {key : self.hist_data[key]['Close'] for key in ticker} if is_sequence(ticker) else {ticker : self.hist_data[ticker]['Close']}
+
+    def get_adj_close(self, ticker=None):
+        #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
+        return {key : self.hist_data[key]['Adj Close'] for key in self.hist_data} if ticker is None else {key : self.hist_data[key]['Adj Close'] for key in ticker} if is_sequence(ticker) else {ticker : self.hist_data[ticker]['Adj Close']}
+
+    def get_volume(self, ticker=None):
+        #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
+        return {key : self.hist_data[key]['Volume'] for key in self.hist_data} if ticker is None else {key : self.hist_data[key]['Volume'] for key in ticker} if is_sequence(ticker) else {ticker : self.hist_data[ticker]['Volume']}
+
+    def get_combo(self,**kwargs):
+        #If user does not provide either ticker or field, then we return an error
+        if not kwargs : return "Error History.get_combo(): No ticker or data field provided. Cannot combine"
+
+        ticker = kwargs['tickers'] if 'tickers' in kwargs else None
+        field = kwargs['fields'] if 'fields' in kwargs else None
+        #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
+        tickers = [key for key in self.hist_data] if ticker is None else [key.upper() for key in ticker] if is_sequence(ticker) else [ticker.upper()]
+        #Check if field is provided; if field is provided and is a list of field, return data for those field, otherwise return data for that field, or if no field is provided return data for all fields 
+        fields = [header for header in self.hist_data[self.ticker[0]]] if field is None else [header.title() for header in field] if is_sequence(field) else [field.title()]
+
+        data = {key : {header : self.hist_data[key][header] for header in fields} for key in tickers}
+        return data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
