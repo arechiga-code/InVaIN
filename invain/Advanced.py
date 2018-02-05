@@ -10,11 +10,10 @@ class Advanced(Simple):
         else: self.ticker = [ticker]
         self.add_tickers(extras)
         self.field = []
-        del Advanced.change_ticker
         
     #Override method for removal
     def change_ticker(self):
-        return ""
+        return
         
     #Add Tickers to End of List, Extend Allows for ticker to be a List                
     def add_ticker(self, ticker):
