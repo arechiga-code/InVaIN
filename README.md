@@ -186,10 +186,32 @@ for stock in prices:
 - ``add_twoHundredDayAverage()``
 - ``add_twoHundredDayAverageChange()``
 - ``add_twoHundredDayAverageChangePercent()``
-- ``Remove for Above Functions ``
+- ``Remove for Above Functions``
 
-**More to Come**
+## TODO/Future Updates
+- ``Historical Data - In Progress (install from clone to use pre-alpha version)``
+- ``Better Error Handling - After Historical Data is in package release``
+- ``Add Documentation - Will attempt to do this periodically untill full docs are complete. Any assistance on this would be great :)``
 
 ## Requirements
 
     requests
+
+## Feedback, Issues, and Features:
+### Feedback
+I'd love to get some feedback from users. I want to know how you are using InVaIN so I can focus on updating it in ways that improve your experience. If you'd like to do so you can email me at *invainapi@gmail.com* **(NOTE: Email abuse will result in your email address being BLOCKED AND/OR REMOVAL OF YOUR ACCESS to InVaIN's data retrieval services)** <br/>
+In that vien, I just wanted to outline some guidelines for submitting issues on github.
+
+### Bugs
+If you experience any bugs when running the package please submit an issue with a description of the issue. Bugs will take priority over all other issues. 
+
+### Bad Data
+If you experience any problems with returned data please create an issue and include:
+- ``Code related to creating, modifiying, and accessing the InVaIN API object``
+- ``Data Returned``
+- ``Day and Approximate Time of Access``
+
+This will allow me to better identify what is causing the issue. If you'd rather not post this information on github, please email it to the email listed in the feedback section.
+
+### New Features
+Please don't hesitate to ask for new features you'd like to see or make suggestions for improvements. You can open an issue here on github and I'll take a look at it as soon as I can.
