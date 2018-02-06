@@ -5,19 +5,19 @@ import sys
 from .Utils import *
 
 class History():
-
-    #Start and End are datetime objects with start being the older of the two dates.
-    #Frequency has three options for interval of returned dates with daily = d, weekly = wk, and monthly = mo; All options accept any number n in the form of nd, nwk, or nmo with n being the number of days, weeks, or months
+    
     def __init__(self, ticker, *extras, **kwargs):
         if kwargs:
             #Check if start, end, or frequency are provided, and set accordingly
             start = kwargs['start'] if 'start' in kwargs else None
             end = kwargs['end'] if 'end' in kwargs else None
-            frequency = kwargs['frequency'] if 'frequency' in kwargs else '1d'
+            frequency = kwargs['frequency'] if 'frequency' in kwargs else 'daily'
+            num_between = kwargs['num_between'] if 'num_between' in kwargs else 1
         else:
             start = None
             end = None
-            frequency = '1d'
+            frequency = 'daily'
+            num_between = 1
 
         now = int(time.mktime(datetime.datetime.now().timetuple()))
 
@@ -25,6 +25,10 @@ class History():
         period1 = now - 30*24*60*60 if start is None else int(time.mktime(start.timetuple()))
         period2 =  now if end is None else int(time.mktime(end.timetuple()))
 
+        if period1 > period2:
+            print("Start is greater than end, cannot initialize History() object \nQuitting")
+            sys.exit(1)
+        
         #Check if ticker var is a list or string then set self.ticker to a list of ticker(s)
         self.ticker = [symbol.upper() for symbol in ticker] if is_sequence(ticker) else [ticker.upper()]
 
@@ -33,8 +37,9 @@ class History():
         
         #Set period to a list of unix timestamps, with the first item being the later time.
         self.period = [period1, period2]
-        
-        self.interval = frequency
+
+        self.interval =  ""
+        self.change_frequency(frequency,num_between)
         
         #Grab Historical Data
         self.hist_data = hist(self.ticker, self.period, self.interval)
@@ -145,9 +150,10 @@ class History():
             n = str(num_between)
         else:
             print("Error Changing Frequency: num_between is not of type int")
-            return
+            return False
         
-        self.interval = n +"d" if compare == 'daily' else n + "wk" if compare == 'weekly' else n + "mo" if compare == 'monthly' else print("Error Changing Frequency: Not a Valid Frequency")
+        self.interval = n +"d" if compare == 'daily' else n + "wk" if compare == 'weekly' else n + "mo" if compare == 'monthly' else print("Error Changing Frequency: Not a Valid Frequency"); return False
+        return True
 
     def get_date(self, ticker=None):
         #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
