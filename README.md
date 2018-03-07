@@ -252,7 +252,7 @@ MSFT{
 ## Feedback, Issues, and Features:
 ### Feedback
 I'd love to get some feedback from users. I want to know how you are using InVaIN so I can focus on updating it in ways that improve your experience. If you'd like to do so you can email me at *invainapi@gmail.com* **(NOTE: Email abuse will result in your email address being BLOCKED AND/OR REMOVAL OF YOUR ACCESS to InVaIN's data retrieval services)** <br/>
-In that vien, I just wanted to outline some guidelines for submitting issues on github.
+In that vein, I just wanted to outline some guidelines for submitting issues on github.
 
 ### Bugs
 If you experience any bugs when running the package please submit an issue with a description of the issue. Bugs will take priority over all other issues. 
