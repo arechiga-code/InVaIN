@@ -1,11 +1,16 @@
 # InVaIN
 
-Python module to get stock data from YAHOO! Finance
+Python module to get real time or historical stock data from YAHOO! Finance
 
 ## Brief Overview
-InVaIN works either through the **Simple API** or the **Advanced API**. <br />
+### Real time stock data works either through the **Simple API** or the **Advanced API**
 **Simple API** is only for one ticker. Once created it will get any stock data for that ticker. It returns just the value so no need for parsing data. Simple API allow for ticker to be changed. <br />
 **Advanced API** hold a list of tickers that can be added to and modified. Advanced API can use Simple object methods, but also have the ability to add several data fields to gather large data sets quickly. Returns values in a dict object so parsing data is neccesary. 
+
+### Historical data works through the **History API**
+**History API** is only for historical data and will **NOT** provide real time data. History API holds a list of tickers that can be added to, a time period to get data for, and the frequency (*daily, weekly, or monthly*) and number of frequency between (*any number >= 1*) of data to return all of which can be modified or retrieved. <br />
+When created it will automatically pull data for the tickers passed, using the default values for time period(*30 days from current day to current day*), frequency(*daily*), and number of frequency between (*1*), or the values supplied by you.<br />
+
 
 ## Install
 
@@ -73,6 +78,53 @@ for stock in prices:
 'AAPL {'price': 173.07}'
 'GOOG {'price': 1047.41}'
 'MSFT {'price': 84.88}'
+```
+
+### Example: History API Method 1 -- Apple Inc. (``AAPL``), Alphabet Inc. (``GOOG``), Microsoft Inc. (``MSFT``) 
+
+```python
+import invain
+
+#Create History API object with all tickers provided. 
+#This will pull stock data for the past 30 days with an interval of 1 day.
+#Note that when creating a History object, historical data is automatically pulled. 
+#If tickers, start or end dates, or frequency are changed, you will need to run api.update_dataset()
+api = invain.History('AAPL','GOOG', 'MSFT')
+
+#Get custom data set
+historical_data = api.get_dataset()
+
+#Returns dict object with stock as the index
+for stock in historical_data:
+   print(stock, historical_data[stock])
+###################
+AAPL{
+  'Adj Close': [...],
+  'Close': [...],
+  'Date': [...],
+  'High': [...],
+  'Low': [...],
+  'Open': [...],
+  'Volume': [...]
+}
+GOOG{
+  'Adj Close': [...],
+  'Close': [...],
+  'Date': [...],
+  'High': [...],
+  'Low': [...],
+  'Open': [...],
+  'Volume': [...]
+}
+MSFT{
+  'Adj Close': [...],
+  'Close': [...],
+  'Date': [...],
+  'High': [...],
+  'Low': [...],
+  'Open': [...],
+  'Volume': [...]
+}
 ```
 
 ## Available methods
@@ -186,7 +238,7 @@ for stock in prices:
 - ``add_twoHundredDayAverage()``
 - ``add_twoHundredDayAverageChange()``
 - ``add_twoHundredDayAverageChangePercent()``
-- ``Remove for Above Functions``
+- ``Remove for Above Functions ``
 
 ## TODO/Future Updates
 - ``Historical Data - In Progress (install from clone to use pre-alpha version)``
