@@ -129,8 +129,34 @@ MSFT{
 
 ## Available methods
 
+###History API
+
+- ``add_ticker(ticker)``
+- ``add_tickers(tickers)`` -- takes argument as array (['ticker1', 'ticker2', ...]) or individual parameters (ticker1, ticker2, ...)
+- ``remove_ticker(tickers)``
+- ``get_tickers()``
+- ``get_period()``
+- ``get_startDate()``
+- ``get_endDate()``
+- ``change_period(periods)``-- takes argument as array (['period1', 'period2']) or individual parameters ('period1', 'period2')
+- ``change_startTime(start)``
+- ``change_endTime(end)``
+- ``get_dataset()``
+- ``update_dataset()``
+- ``change_frequency(frequency, num_between=1)`` --  frequency can be daily, weekly, or monthly. num_between is the step between dates (Not required. Default is 1)
+- ``get_date()`` -- if ticker(s) provided only returns data for those ticker(s)
+- ``get_open()`` -- if ticker(s) provided only returns data for those ticker(s)
+- ``get_high()`` -- if ticker(s) provided only returns data for those ticker(s)
+- ``get_low()`` -- if ticker(s) provided only returns data for those ticker(s)
+- ``get_close()`` -- if ticker(s) provided only returns data for those ticker(s)
+- ``get_adj_close()`` -- if ticker(s) provided only returns data for those ticker(s)
+- ``get_volume()`` -- if ticker(s) provided only returns data for those ticker(s)
+- ``get_combo(ticker="ticker",field="high")`` -- Either ticker or field MUST be given (both is valid). If no ticker is provided returns data for all tickers. If no field is provided returns data for all fields.
+
+
 ### Simple API 
 - ``change_ticker(ticker)``
+- ``get_ticker()``
 - ``get_price()``
 - ``get_volume()``
 - ``get_ask()``
@@ -184,8 +210,10 @@ MSFT{
 - ``get_twoHundredDayAverageChangePercent()``
 
 ### Advanced API
+- ``get_customData()``
 - ``add_ticker(ticker)``
 - ``add_tickers(tickers)`` -- takes list of tickers as argument (or add_tickers(ticker1,ticker2,...))
+- ``get_tickers(tickers)``
 - ``remove_tickers(tickers)``
 - ``add_price()``
 - ``add_volume()``
@@ -252,7 +280,7 @@ MSFT{
 ## Feedback, Issues, and Features:
 ### Feedback
 I'd love to get some feedback from users. I want to know how you are using InVaIN so I can focus on updating it in ways that improve your experience. If you'd like to do so you can email me at *invainapi@gmail.com* **(NOTE: Email abuse will result in your email address being BLOCKED AND/OR REMOVAL OF YOUR ACCESS to InVaIN's data retrieval services)** <br/>
-In that vien, I just wanted to outline some guidelines for submitting issues on github.
+In that vein, I just wanted to outline some guidelines for submitting issues on github.
 
 ### Bugs
 If you experience any bugs when running the package please submit an issue with a description of the issue. Bugs will take priority over all other issues. 

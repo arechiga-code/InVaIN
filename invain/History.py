@@ -60,7 +60,7 @@ class History():
         except ValueError as err:
             print(err.args,"\n Non-Fatal Error")
             
-    def get_ticker(self):
+    def get_tickers(self):
         return self.ticker
 
     #Returns list of datetimes instead of unix timestamps
@@ -163,7 +163,7 @@ class History():
         #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
         return {key : self.hist_data[key]['Open'] for key in self.hist_data} if ticker is None else {key : self.hist_data[key]['Open'] for key in ticker} if is_sequence(ticker) else {ticker : self.hist_data[ticker]['Open']}
 
-    def get_highs(self, ticker=None):
+    def get_high(self, ticker=None):
         #Check if ticker is provided; if ticker is provided and is a list of tickers, return data for those tickers, otherwise return data for that ticker, or if no ticker is provided return data for all tickers 
         return {key : self.hist_data[key]['High'] for key in self.hist_data} if ticker is None else {key : self.hist_data[key]['High'] for key in ticker} if is_sequence(ticker) else {ticker : self.hist_data[ticker]['High']}
 

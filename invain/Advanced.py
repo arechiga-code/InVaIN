@@ -33,7 +33,7 @@ class Advanced(Simple):
         except ValueError as err:
             print(err.args,"\n Non-Fatal Error")
 
-    def get_ticker(self):
+    def get_tickers(self):
         return self.ticker;
             
 #              Add Fields to Custom Field List
