@@ -151,8 +151,15 @@ class History():
         else:
             print("Error Changing Frequency: num_between is not of type int")
             return False
-        
-        self.interval = n +"d" if compare == 'daily' else n + "wk" if compare == 'weekly' else n + "mo" if compare == 'monthly' else print("Error Changing Frequency: Not a Valid Frequency"); return False
+        if compare == 'daily':
+            self.interval = n + "d"
+        elif compare == 'weekly':
+            self.interval = n + "wk"
+        elif compare == 'monthly':
+            self.interval = n + "mo"
+        else:
+            print("Error Changing Frequency: Not a Valid Frequency")
+            return False
         return True
 
     def get_date(self, ticker=None):

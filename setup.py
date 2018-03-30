@@ -10,7 +10,7 @@ with open(path.join(here, 'invain', '__version__.py'),
           'r', 'utf-8') as f:
     exec(f.read(), about)
 
-with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 packages=find_packages(exclude=['contrib', 'docs', 'tests*'])
